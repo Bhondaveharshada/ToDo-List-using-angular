@@ -11,7 +11,9 @@ import { TodoComponent } from '../todo/todo.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-   h_array= [] 
+    static h_array:any[] =[]
+    newtask_arr:any[]= HomeComponent.h_array
+
 
   display(){
     

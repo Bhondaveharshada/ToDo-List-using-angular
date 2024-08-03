@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-4">
+        <div class="btn btn-success ms-4 mt-4" (click)="getAllusers()">Get User</div>
+    </div>
+
+    <div> 
+     @for(item of userList; track $index){
+         <li>{{item | json}} </li>
+    }
+      
+    </div>
+</div>

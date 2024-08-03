@@ -36,10 +36,10 @@
                 <tbody>
                     <tr *ngFor="let task of arr; let i = index">
                         <th scope="row">{{ i +1}}</th>
-                        <td><input #taskinput type="text"class="form-control" [ngClass]="{'edit':task.iseditable, 'update':!task.iseditable, 'check':task.iscompleted}" id="task" value="{{ task.taskname }}" [readOnly]="task.iseditable" ></td>
+                        <td><input #taskinput type="text"class="form-control" [ngClass]="{'edit':task.iseditable && index==i, 'update':!task.iseditable, 'check':task.iscompleted}" id="task" value="{{ task.taskname }}" readonly></td>
                         <td><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" (click)="ischecked(i)"></td>
                         <td>
-                            <button (click)="editTask(i,taskinput)" [disabled]="task.iseditable">Edit</button>
+                            <button (click)="editTask(i,taskinput)" (click)="toggle(i)" [disabled]="task.iseditable && index ==i">Edit</button>
                             <button (click)="deleteTask(i)">Delete</button>
                         </td>
                       </tr>

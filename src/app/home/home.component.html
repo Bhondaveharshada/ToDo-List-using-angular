@@ -40,3 +40,14 @@
         </div>
     </div>
 </section> -->
+<tbody>
+    <tr *ngFor="let task of newtask_arr; let i = index">
+        <th scope="row">{{ i +1}}</th>
+        <td><input #taskinput type="text"class="form-control" [ngClass]="{'edit':task.iseditable, 'update':!task.iseditable, 'check':task.iscompleted}" id="task" value="{{ task.taskname }}" [readOnly]="task.iseditable" ></td>
+        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" ></td>
+        <td>
+            <button  [disabled]="task.iseditable">Edit</button>
+            <button >Delete</button>
+        </td>
+      </tr>
+</tbody>
