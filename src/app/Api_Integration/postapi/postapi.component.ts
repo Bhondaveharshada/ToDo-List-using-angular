@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { JsonPipe } from '@angular/common';
 import { ApiService } from '../../service/api.service';
+import { AlertComponent } from '../../reusableComponent/alert/alert.component';
 
 @Component({
   selector: 'app-postapi',
   standalone: true,
-  imports: [FormsModule,JsonPipe],
+  imports: [FormsModule,JsonPipe,AlertComponent],
   templateUrl: './postapi.component.html',
   styleUrl: './postapi.component.css'
 })
